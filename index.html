@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EDUVERSE – Tugas, kelompok belajar, dan kegiatan kampus</title>
+  <meta name="description" content="EDUVERSE menggabungkan manajemen akademik, komunitas belajar, dan informasi kegiatan pendidikan dalam satu website.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23FF8DBA'/%3E%3Cpath d='M9 9h14v3.5H13V14h8v3.5h-8V19.5h10V23H9z' fill='%234A1A35'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ============ LANDING ============ -->
+<div id="landing">
+  <header class="topbar">
+    <a class="brand" href="#/" aria-label="EDUVERSE beranda"><span class="brand-mark">E</span>EDUVERSE</a>
+    <nav class="topnav" aria-label="Navigasi utama">
+      <a href="#modul">Modul</a>
+      <a href="#alur">Cara pakai</a>
+      <a href="#akses">Hak akses</a>
+    </nav>
+    <div class="topbar-actions">
+      <button class="btn btn-quiet" data-act="open-auth" data-mode="login" id="btn-login">Masuk</button>
+      <button class="btn btn-ink" data-act="open-auth" data-mode="register" id="btn-register">Daftar gratis</button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="stickers" aria-hidden="true"><span>♥</span><span>✦</span><span>★</span><span>✿</span></div>
+    <div class="hero-copy">
+      <h1>Tugas, kelompok belajar, dan kegiatan kampus. Satu tempat.</h1>
+      <p class="lead">Berhenti membuka lima aplikasi hanya untuk tahu tugas apa yang jatuh tempo besok. EDUVERSE mengumpulkan jadwal, catatan, teman belajar, dan info seminar atau beasiswa di satu website.</p>
+      <div class="hero-cta">
+        <button class="btn btn-pencil btn-lg" data-act="open-auth" data-mode="register">Mulai atur kuliahmu</button>
+        <button class="btn btn-outline btn-lg" data-act="demo-login">Coba akun demo</button>
+      </div>
+      <p class="hero-note">Prototipe ini menyimpan data di browsermu. Tidak perlu server.</p>
+    </div>
+
+    <div class="hero-art">
+    <div class="hero-mascot" id="hero-mascot"></div>
+    <div class="bubble" id="hero-bubble" role="status" aria-live="polite"></div>
+    <!-- Demo interaktif: tugas bisa dicentang -->
+    <aside class="board" aria-label="Contoh papan tugas">
+      <div class="board-head">
+        <div>
+          <p class="board-day" id="demo-day">Hari ini</p>
+          <h2>Tugas minggu ini</h2>
+        </div>
+        <div class="ring" id="demo-ring" role="img" aria-label="Progres tugas">
+          <svg viewBox="0 0 44 44" aria-hidden="true">
+            <circle class="ring-bg" cx="22" cy="22" r="18"/>
+            <circle class="ring-fg" id="demo-ring-fg" cx="22" cy="22" r="18" pathLength="100"/>
+          </svg>
+          <span id="demo-ring-text">1/4</span>
+        </div>
+      </div>
+      <ul class="demo-list" id="demo-list"></ul>
+      <p class="board-foot">Centang salah satu, lihat apa yang terjadi ♥</p>
+    </aside>
+    </div>
+  </section>
+
+  <section class="section" id="modul">
+    <div class="section-head">
+      <h2>Tiga modul, satu akun</h2>
+      <p>Semua data saling terhubung ke akunmu, jadi kamu tidak perlu mencatat hal yang sama dua kali.</p>
+    </div>
+
+    <article class="module m-academic">
+      <div class="module-text">
+        <h3>Manajemen akademik</h3>
+        <p>Catat jadwal kuliah, tugas beserta tenggatnya, dan ringkasan materi. Dashboard menampilkan apa yang perlu kamu kerjakan lebih dulu.</p>
+        <ul class="checks">
+          <li>Jadwal mingguan per hari</li>
+          <li>Tugas dengan status belum, proses, selesai</li>
+          <li>Catatan materi yang bisa dicari</li>
+        </ul>
+      </div>
+      <div class="module-visual" aria-hidden="true">
+        <div class="mini-week">
+          <span>Sen</span><span>Sel</span><span>Rab</span><span>Kam</span><span>Jum</span>
+          <i class="b b1">Basis Data</i><i></i><i class="b b2">Pemrograman Web</i><i></i><i class="b b3">Statistika</i>
+          <i></i><i class="b b4">Basis Data (Lab)</i><i></i><i class="b b1">Jaringan</i><i></i>
+        </div>
+      </div>
+    </article>
+
+    <article class="module m-community">
+      <div class="module-visual" aria-hidden="true">
+        <div class="mini-group">
+          <div class="avatars"><b>R</b><b>A</b><b>S</b><b>D</b><b class="more">+3</b></div>
+          <p class="mg-title">Kelompok Basis Data</p>
+          <p class="mg-meta">Topik: normalisasi dan relasi tabel</p>
+          <p class="mg-meta">Setiap Selasa, 19.00</p>
+        </div>
+      </div>
+      <div class="module-text">
+        <h3>Komunitas belajar</h3>
+        <p>Buat kelompok untuk satu mata kuliah atau cari kelompok yang sudah ada. Bergabung dan keluar kapan saja. Pembuat kelompok mengelola anggotanya.</p>
+        <ul class="checks">
+          <li>Kelompok per mata kuliah dan topik</li>
+          <li>Jadwal belajar bersama</li>
+          <li>Kelola anggota sebagai pembuat kelompok</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="module m-events">
+      <div class="module-text">
+        <h3>Informasi kegiatan</h3>
+        <p>Seminar, webinar, workshop, kompetisi, dan beasiswa dalam satu daftar. Cari berdasarkan kategori, simpan untuk nanti, atau langsung daftar.</p>
+        <ul class="checks">
+          <li>Pencarian dan filter kategori</li>
+          <li>Simpan atau daftar kegiatan</li>
+          <li>Admin menambah dan memperbarui informasi</li>
+        </ul>
+      </div>
+      <div class="module-visual" aria-hidden="true">
+        <div class="mini-events">
+          <p><b>Webinar</b> Karier di dunia data</p>
+          <p><b>Lomba</b> Hackathon Pendidikan</p>
+          <p><b>Beasiswa</b> Pendaftaran dibuka</p>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <section class="section section-ink" id="alur">
+    <div class="section-head">
+      <h2>Cara pakai, dari daftar sampai ikut kegiatan</h2>
+    </div>
+    <ol class="steps">
+      <li><h3>Daftar atau masuk</h3><p>Buat akun dengan email kampusmu, atau masuk jika sudah punya.</p></li>
+      <li><h3>Lihat dashboard</h3><p>Ringkasan tugas, jadwal hari ini, dan kegiatan yang kamu ikuti.</p></li>
+      <li><h3>Atur akademikmu</h3><p>Tambahkan jadwal, tugas, dan catatan di modul manajemen akademik.</p></li>
+      <li><h3>Cari teman belajar</h3><p>Buat kelompok baru atau gabung ke kelompok yang cocok.</p></li>
+      <li><h3>Temukan kegiatan</h3><p>Jelajahi info kegiatan, lalu simpan atau daftar.</p></li>
+    </ol>
+  </section>
+
+  <section class="section" id="akses">
+    <div class="section-head">
+      <h2>Siapa boleh melakukan apa</h2>
+      <p>Mengubah atau menghapus data dibatasi oleh kepemilikan dan peran.</p>
+    </div>
+    <div class="roles">
+      <div class="role">
+        <h3>Siswa / mahasiswa</h3>
+        <p>Pengguna utama.</p>
+        <ul class="checks">
+          <li>Mengelola jadwal, tugas, dan catatan milik sendiri</li>
+          <li>Membuat atau bergabung dengan kelompok belajar</li>
+          <li>Melihat dan mendaftar kegiatan</li>
+        </ul>
+      </div>
+      <div class="role role-admin">
+        <h3>Admin</h3>
+        <p>Pengelola sistem.</p>
+        <ul class="checks">
+          <li>Mengelola data pengguna dan kategori</li>
+          <li>Menambah, mengubah, dan menghapus informasi kegiatan</li>
+          <li>Memantau kelompok dan data pendaftaran</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2>Mulai dari satu tugas yang belum kamu catat.</h2>
+    <button class="btn btn-pencil btn-lg" data-act="open-auth" data-mode="register">Buat akun</button>
+  </section>
+
+  <footer class="footer">
+    <span class="brand"><span class="brand-mark">E</span>EDUVERSE</span>
+    <p>Prototipe proyek website berbasis CRUD. HTML, CSS, dan JavaScript.</p>
+  </footer>
+</div>
+
+<!-- ============ APLIKASI ============ -->
+<div id="app" hidden>
+  <aside class="sidebar" id="sidebar">
+    <a class="brand" href="#/" aria-label="Ke beranda"><span class="brand-mark">E</span>EDUVERSE</a>
+    <nav id="app-nav" aria-label="Menu aplikasi"></nav>
+    <div class="sidebar-user">
+      <div class="user-chip">
+        <span class="avatar" id="user-avatar">?</span>
+        <div><strong id="user-name">Pengguna</strong><small id="user-role">Mahasiswa</small></div>
+      </div>
+      <button class="btn btn-quiet btn-sm" data-act="logout">Keluar</button>
+    </div>
+  </aside>
+  <main class="content" id="content" tabindex="-1"></main>
+  <div class="buddy" id="buddy">
+    <div class="bubble" id="buddy-bubble" role="status" aria-live="polite"></div>
+    <div id="buddy-mascot"></div>
+  </div>
+</div>
+
+<!-- ============ DIALOG ============ -->
+<dialog id="auth-dialog" aria-labelledby="auth-title">
+  <form method="dialog" class="dialog-close-row"><button class="icon-btn" aria-label="Tutup">✕</button></form>
+  <div class="tabs" role="tablist">
+    <button role="tab" class="tab" data-act="auth-tab" data-mode="login" id="tab-login">Masuk</button>
+    <button role="tab" class="tab" data-act="auth-tab" data-mode="register" id="tab-register">Daftar</button>
+  </div>
+  <h2 id="auth-title">Masuk ke EDUVERSE</h2>
+  <form id="auth-form" novalidate>
+    <label class="field" data-only="register"><span>Nama lengkap</span><input name="nama" autocomplete="name"></label>
+    <label class="field"><span>Email</span><input name="email" type="email" autocomplete="email" required></label>
+    <label class="field"><span>Kata sandi</span><input name="password" type="password" autocomplete="current-password" required minlength="6"></label>
+    <label class="field" data-only="register"><span>Program studi dan kelas</span><input name="prodi" placeholder="Contoh: Sistem Informasi, 3B"></label>
+    <p class="form-error" id="auth-error" role="alert" hidden></p>
+    <button class="btn btn-ink btn-block" type="submit" id="auth-submit">Masuk</button>
+  </form>
+  <div class="demo-accounts">
+    <p>Atau coba akun demo:</p>
+    <button class="btn btn-outline btn-sm" data-act="demo-login" data-who="user">Mahasiswa</button>
+    <button class="btn btn-outline btn-sm" data-act="demo-login" data-who="admin">Admin</button>
+  </div>
+</dialog>
+
+<dialog id="modal" aria-labelledby="modal-title">
+  <form method="dialog" class="dialog-close-row"><button class="icon-btn" aria-label="Tutup">✕</button></form>
+  <h2 id="modal-title"></h2>
+  <div id="modal-body"></div>
+</dialog>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="js/db.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/fun.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/views.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
